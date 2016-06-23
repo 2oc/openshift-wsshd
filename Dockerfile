@@ -4,7 +4,7 @@ MAINTAINER Joeri van Dooren <ure@mororless.be>
 # https://pkgs.alpinelinux.org/packages?name=php%25&repo=all&arch=x86_64&maintainer=all
 RUN apk --update add curl bash openssl python openssh openssh-client git && \
 # mkdir /src && (cd /src; ) && \
-m -f /var/cache/apk/*
+rm -f /var/cache/apk/*
 
 # Exposed Port
 EXPOSE 5000
