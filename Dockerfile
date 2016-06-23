@@ -2,6 +2,7 @@ FROM gliderlabs/alpine:3.4
 MAINTAINER Joeri van Dooren <ure@mororless.be>
 
 COPY app/run.sh /app/run.sh
+COPY wssh /wssh
 
 # python-dev musl-dev libffi-dev openssl-dev py-pip gcc
 
