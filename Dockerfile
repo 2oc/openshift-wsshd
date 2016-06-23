@@ -12,7 +12,7 @@ ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa && \
 ssh-keygen -f /etc/ssh/ssh_host_ed25519_key   -N '' -t ed25519 && \
 ssh-keygen -f /wssh/.ssh/key -P '' && \
 cat /wssh/.ssh/key > /wssh/.ssh/authorized_keys && \
-chmod a+rx /app/run.sh && chmod a+rw /etc/passwd && chmod a+r /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key  /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_ed25519_key /wssh/.ssh/authorized_keys
+chmod a+rx /app/run.sh && chmod a+rw /etc/passwd && chmod a+r /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key  /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_ed25519_key /wssh/.ssh/authorized_keys /wssh/.ssh/key
 
 # Exposed Port
 EXPOSE 5000
