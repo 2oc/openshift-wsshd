@@ -7,7 +7,7 @@ COPY app/run.sh /app/run.sh
 
 # https://pkgs.alpinelinux.org/packages?name=php%25&repo=all&arch=x86_64&maintainer=all
 RUN apk --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add curl bash openssl python libffi py-geventwebsocket py-gevent py-paramiko py-flask py-websocket-client openssh-client git && \
-(mkdir /src && cd /src && git clone https://github.com/weepee-org/wssh.git; && cd wssh && python setup.py) && \
+(mkdir /src && cd /src && git clone https://github.com/weepee-org/wssh.git && cd wssh && python setup.py) && \
 rm -f /var/cache/apk/* /src && \
 chmod a+rx /app/run.sh
 
