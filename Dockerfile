@@ -4,7 +4,7 @@ MAINTAINER Joeri van Dooren <ure@mororless.be>
 COPY app/run.sh /app/run.sh
 
 # https://pkgs.alpinelinux.org/packages?name=php%25&repo=all&arch=x86_64&maintainer=all
-RUN apk --update add curl bash openssl python python-dev py-pip openssh openssh-client git gcc && \
+RUN apk --update add curl bash openssl python python-dev musl-dev py-pip openssh openssh-client git gcc && \
 pip install websocket-client gevent gevent-websocket paramiko flask && \
 mkdir /src && (cd /src; git clone git@github.com:weepee-org/wssh.git; cd wssh; python setup.py) && \
 rm -f /var/cache/apk/* && \
