@@ -1,3 +1,5 @@
 #!/bin/bash
 
-wssh --port 80 --key /wssh/.ssh/key --ssh-port 2222 $*
+argv=$*
+
+wssh --host $1 --port 80 --key /wssh/.ssh/key --ssh-port 2222 oc@localhost ${argv#* }
