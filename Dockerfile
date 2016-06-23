@@ -2,14 +2,16 @@ FROM gliderlabs/alpine:3.4
 MAINTAINER Joeri van Dooren <ure@mororless.be>
 
 # https://pkgs.alpinelinux.org/packages?name=php%25&repo=all&arch=x86_64&maintainer=all
-RUN apk --update add curl bash openssl python openssh openssh-client && rm -f /var/cache/apk/*
+RUN apk --update add curl bash openssl python openssh openssh-client git && \
+# mkdir /src && (cd /src; ) && \
+m -f /var/cache/apk/*
 
 # Exposed Port
 EXPOSE 5000
 
 WORKDIR /
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/sh"]
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Alpine linux based websocket sshd server" \
