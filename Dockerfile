@@ -11,7 +11,7 @@ RUN apk --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ a
 rm -fr /var/cache/apk/* /src && \
 ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa && \
 ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa && \
-chmod a+rx /app/run.sh && chmod a+rw /etc/passwd
+chmod a+rx /app/run.sh && chmod a+rw /etc/passwd /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key
 
 # Exposed Port
 EXPOSE 5000
