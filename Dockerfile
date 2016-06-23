@@ -4,9 +4,6 @@ MAINTAINER Joeri van Dooren <ure@mororless.be>
 COPY app/run.sh /app/run.sh
 COPY wssh /wssh
 
-# python-dev musl-dev libffi-dev openssl-dev py-pip gcc
-
-# https://pkgs.alpinelinux.org/packages?name=php%25&repo=all&arch=x86_64&maintainer=all
 RUN apk --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add curl bash openssl python libffi py-geventwebsocket py-gevent py-paramiko py-flask py-websocket-client py-setuptools openssh openssh-client git && \
 (mkdir /src && cd /src && git clone https://github.com/weepee-org/wssh.git && cd wssh && python setup.py install) && \
 rm -fr /var/cache/apk/* /src && \
