@@ -19,7 +19,7 @@ EXPOSE 5000
 
 WORKDIR /wssh
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["/run.sh"]
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="Alpine linux based websocket sshd server" \
