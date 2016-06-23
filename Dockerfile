@@ -3,7 +3,7 @@ MAINTAINER Joeri van Dooren <ure@mororless.be>
 
 COPY run.sh /run.sh
 
-RUN mkdir -p /wssh/.ssh && apk --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add curl bash openssl python libffi py-geventwebsocket py-gevent py-paramiko py-flask py-websocket-client py-setuptools openssh openssh-client git && \
+RUN mkdir -p /wssh/.ssh && apk --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add curl bash openssl python libffi py-geventwebsocket py-gevent py-paramiko py-flask py-websocket-client py-setuptools py-six openssh openssh-client git && \
 (mkdir /src && cd /src && git clone https://github.com/weepee-org/wssh.git && cd wssh && python setup.py install) && \
 rm -fr /var/cache/apk/* /src && \
 ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa && \
