@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wssh --port 80 --key /wssh/.ssh/key --ssh-port 2222 $*
